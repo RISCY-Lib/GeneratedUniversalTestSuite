@@ -1,0 +1,57 @@
+{
+    "test_lib": [
+        {
+            "test_name": "test_1",
+            "inheritance": 
+            {
+                "extends":   "base_test"
+            },
+            "env_options": {
+                "override_by_type": [
+                    {
+                        "base_type":       "type_a",
+                        "overriding_type": "type_b"
+                    },
+                    {
+                        "base_type":       "type_b",
+                        "overriding_type": "type_c"
+                    }],
+                "override_by_inst": [
+                    {
+                        "base_type":       "type_a",
+                        "overriding_type": "type_b",
+                        "path":            "inst1.*"
+                    },
+                    {
+                        "base_type":       "type_b",
+                        "overriding_type": "type_c",
+                        "path":            "inst2.*"
+                    }],
+                "configurations": [
+                    {
+                        "path":  "m_env_cfg.clk_rst_agent_cfg.rst_time",
+                        "value": "10us"
+                    },
+                    {
+                        "path":  "m_env_cfg.clk_rst_agent_cfg.clk_period",
+                        "value": "10ns"
+                    }]},
+            "actions" : [
+                {
+                    "type":         "seq",
+                    "seq_lib":      "seq_lib_1",
+                    "seq_name":     "seq_name_0"
+                },
+                {
+                    "type":         "scenario",
+                    "scenario_lib": "scenario_lib_1",
+                    "scenario_name":"scenario_name_0"
+                },
+                {
+                    "type":          "repeat",
+                    "repeat_cnt":    "5",
+                    "actions_prior": "2"
+                }]
+        }
+    ]
+}
