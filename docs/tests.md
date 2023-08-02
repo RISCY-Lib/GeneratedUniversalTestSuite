@@ -32,7 +32,7 @@ Component configurations or tests can be set by providing the path and the value
      config_set: [ {path,value} ]
 
 ## Generics ##
-
+TODO, creates a .do file
 ## Actions ##
 Refer to actions.md for available actions.
 
@@ -44,9 +44,18 @@ test_1 entry of test_lib_ex.json would generate the follwoing sv:
     
         `uvm_component_utils( test_1 );
 
+        seq_name_0 seq_name_0_h;
+        scenario_name_0 scenario_name_0_h;
+
+
         function new( string name = "", uvm_component parent = null );
             super.new( name, parent );
         endfunction
+
+        function void build_phase(uvm_phase phase);
+            seq_name_0_h = seq_name_0::type_id::create("seq_name_0_h");
+            scenario_name_0_h = scenario_name_0::type_id::create("scenario_name_0_h");
+        endfunction : build_phase
 
         virtual function void end_of_elaboration_phase(uvm_phase phase);
             super.end_of_elaboration_phase(phase);
@@ -73,8 +82,8 @@ test_1 entry of test_lib_ex.json would generate the follwoing sv:
             phase.raise_objection(this, "Objection raised by test_1");
 
             repeat(7) begin
-                seq_name_0.start(null);
-                scenario_name_0.start(null);
+                seq_name_0_h.start(null);
+                scenario_name_0_h.start(null);
             end
 
             phase.drop_objection(this, "Objection dropped by test_1");

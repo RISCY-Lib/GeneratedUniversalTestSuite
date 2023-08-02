@@ -8,16 +8,16 @@ An Action item can be several different types, and depending on the type, will h
 
 A Sequence action type includes the information of a specific sequence to generate. 
 
-    [ {type:"seq",seq_lib,seq_name,config(optional)}]
+    [ {type:"seq",seq_lib,seq_name,config(optional)},config_set[]]
 
-The sequence library the sequence is a part of, and the sequence_name must be included, but the configuration option is optional. If no configuration is spefcificed then the Default one will be used.
+The sequence library the sequence is a part of, and the sequence_name must be included, but the configuration option is optional. If no configuration is spefcificed then the Default one will be used. A configuration set will only be considered when in a scenario_set object.
 
 
 ## Scenario ##
 
 A Scenario action type includes the information of a specific senario to generate. The scenario library it is a part of must be included, but the configuration option is optional. If no configuration is spefcificed then the Default one will be used.
 
-    [ {type:"scenario",scenario_lib,scenario_name,config(optional)}]
+    [ {type:"scenario",scenario_lib,scenario_name,config(optional), config_set[]}]
 ## Repeat ##
 A set of actions, or the previous action can be repeated through the Repeat action. 
 
