@@ -1,5 +1,16 @@
 # guts Contributor's Guide
 
+## Development Environment
+A devlopement environment has been created. To use install docker and docker compose.
+
+Then:
+
+```docker build -t guts_dev:1.0 .```
+
+```docker compose up```
+
+Then connect to the docker image through the VSCode Docker/Dev Container extension (or similar on other IDE).
+
 ## Verifying the Project
 
 A ```tox``` environment has been setup to check the [coding styles](#Coding-Style) and the ```pytest``` tests.
