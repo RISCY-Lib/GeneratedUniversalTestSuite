@@ -20,5 +20,6 @@ from __future__ import annotations
 
 from typing import Any, Type, get_type_hints
 
+
 def get_type_annotations(cls: Type[Any]) -> dict[str, Type[Any]]:
     return get_type_hints(cls)

@@ -56,4 +56,3 @@ def test_schema_sequence(name, param, timeout, timeout_int):
   assert s.param.type == param["type"]
   assert s.param.value == param["value"]
   assert s.timeout == timeout_int
-

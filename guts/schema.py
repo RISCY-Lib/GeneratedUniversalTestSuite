@@ -46,12 +46,12 @@ class MissingRequiredSchemaChild(TypeError):
 ############################################################################
 SchemaBaseT = TypeVar("SchemaBaseT", bound="_SchemaBase")
 
+
 @dataclass
 class _SchemaBase:
   @classmethod
   def from_dict(cls: Type[SchemaBaseT], definition: dict) -> SchemaBaseT:
     """Create the schema object from a dictiontary definition.
-
 
     Args:
         cls (Type[SchemaBaseT]): The class to create
@@ -156,6 +156,5 @@ class Sequence(_SchemaBase):
     if "'h" in raw_int:
       substr = raw_int.find("'h") + len("'h")
       return int(raw_int[substr:], 16)
-
 
     return int(raw_int)
